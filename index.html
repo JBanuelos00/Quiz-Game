@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <title>Title</title>
+    <title>My Quiz Game</title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -14,25 +14,67 @@
 </head>
 
 <body>
+    <!-- <video autoplay muted loop id="backgroundVid">
+        <source src="assets/images/Rainbow_Nebula_4K_Motion_Background.mp4" type="video/mp4">
+    </video>      -->
     <div class="container">
+        <audio id="cheerAudio">
+            <source src="assets/audio/cheer.mp3" type="audio/mpeg">
+        </audio>
+        <audio id="awwAudio">
+            <source src="assets/audio/aww.mp3" type="audio/mpeg">
+        </audio>
+
         <!-- Create start menu -->
-        <div id="start"></div>
-
-        <!-- Create quiz body -->
-        <div id="quizBody">
-            <div id="quizImg"></div>
-            <div id="quizQuestion"></div>
-            <div id="optionA"></div>
-            <div id="optionB"></div>
-            <div id="optionC"></div>
-            <div id="optionD"></div>
-
-            <div id="countDown"></div>
+        <div class="row banner">
         </div>
+        <div class="row justify-content-center">
+            <div id="start" class="jumbotron">
+                <h1 class="display-4">Test Your Gaming Knowlege</h1>
+                <p class="lead">This is a simple quiz that will let you test your knowledge of games!</p>
+                <hr class="my4">
+                <a href="#" id="startBtn" class="btn btn-primary btn-lg">PLAY</a>
+            </div>
 
+
+            <!-- Create quiz body -->
+            <div id="quiz" class="jumbotron justify-content-center" style="display: none">
+                <div id="quizQuestion"></div>
+                <div id="choices" class="card-columns">
+                    <div class="card bg-light">
+                        <div class="card-body text-center" onclick="check('A')">
+                            <p id="optionA" class="card-text"></p>
+                        </div>
+                    </div>
+                    <div class="card bg-light">
+                        <div class="card-body text-center" onclick="check('B')">
+                            <p id="optionB" class="card-text" ></p>
+                        </div>
+                    </div>
+                    <div class="card bg-light">
+                        <div class="card-body text-center" onclick="check('C')">
+                            <p id="optionC" class="card-text"></p>
+                        </div>
+                    </div>
+                    <div class="card bg-light">
+                        <div class="card-body text-center" onclick="check('D')">
+                            <p id="optionD" class="card-text"></p>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="countDown">
+                    <div id="timer"></div>
+                </div>
+                <div id="progress"></div>
+            </div>
+            <div id="score" style="display: none"></div>
+        </div>
+        <div class="row banner">
+        </div>
     </div>
+
     <!-- Optional JavaScript -->
-    <script src="script.js"></script>
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
         integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
@@ -43,6 +85,7 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
     </script>
+    <script src="script.js"></script>
 </body>
 
 </html>
